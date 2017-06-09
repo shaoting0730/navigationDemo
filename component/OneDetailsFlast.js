@@ -63,7 +63,7 @@ export default class OneDetailsFlast extends Component{
         var B = parseInt(Math.random()*255)
         return(
             <View style={{flexDirection:'row',marginTop:5,marginLeft:5,borderWidth:1,marginRight:5,borderColor:'#DEDEDE',backgroundColor:'white'}}>
-                <Image source={require('../image/1111.png')} style={{width:60,height:60,borderRadius:30,marginTop:5,marginBottom:5}}/>
+                <Image source={require('../image/one_selected.png')} style={{width:60,height:60,borderRadius:30,marginTop:5,marginBottom:5}}/>
                 <View style={{flexDirection:'column',justifyContent:'space-around',marginLeft:5}}>
                     <Text style={{fontSize:16,color:'rgba('+R+','+G+','+B+',1.0)'}}>歌名: 彩虹彼岸</Text>
                     <View style={{flexDirection:'row'}}>
