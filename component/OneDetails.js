@@ -14,10 +14,16 @@ import {
 } from 'react-native';
 
 export default class OneDetails extends Component {
+
     static navigationOptions = ({ navigation }) => ({
         title: '详情',
         headerStyle:{backgroundColor:'cyan'},
         headerTintColor: 'red',
+        headerLeft:(
+            <Text onPress={()=>navigation.goBack()}>回到上一页</Text>
+        ),
+        headerTitleStyle:{alignSelf:'center'} //安卓title的位置
+
     })
     render() {
         return (
@@ -32,7 +38,7 @@ export default class OneDetails extends Component {
         );
     }
     onclickBtn =() =>{
-        this.props.navigation.navigate('OneDetailsDetails')
+        this.props.navigation.navigate('OneDetailsFlat')
     }
     onclickBtn1 =() =>{
         this.props.navigation.navigate('OneDetailsList')

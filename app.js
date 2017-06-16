@@ -10,7 +10,7 @@ import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
 import Two from './component/Two';
 import One from './component/One';
 import OneDetails from './component/OneDetails'
-import OneDetailsDetails from './component/OneDetailsFlast'
+import OneDetailsFlat from './component/OneDetailsFlat'
 import OneDetailsList from  './component/OneDetailsList'
 
 export default class RootScene extends Component {
@@ -75,13 +75,12 @@ const Tab = TabNavigator({
 const Navigator = StackNavigator({
     Tab: {
         screen: Tab,
-
     },
     OneDetails : {
         screen: OneDetails,
     },
-    OneDetailsDetails : {
-        screen:OneDetailsDetails
+    OneDetailsFlat : {
+        screen:OneDetailsFlat
     },
     OneDetailsList : {
         screen:OneDetailsList

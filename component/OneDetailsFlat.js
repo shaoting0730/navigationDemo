@@ -19,7 +19,7 @@ var {width,height} = Dimensions.get('window');
 var dataAry = []
 var start  = 0
 
-export default class OneDetailsFlast extends Component{
+export default class OneDetailsFlat extends Component{
     static navigationOptions = ({ navigation }) => ({
         title: 'FlatList',
         headerStyle:{backgroundColor:'yellow'},
