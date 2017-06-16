@@ -18,13 +18,6 @@ import {
 var {width,height} = Dimensions.get('window');
 var dataAry = []
 var ds = new ListView.DataSource({rowHasChanged:(r1,r2) => r1 !== r2});
-import { NavigationActions } from 'react-navigation'
-const resetAction = NavigationActions.reset({
-    index: 0,
-    actions: [
-        NavigationActions.navigate({ routeName: 'One'})
-    ]
-})
 export default class OneDetailsList extends Component{
     static navigationOptions = ({ navigation }) => ({
          header:null  //取消导航栏
@@ -41,7 +34,7 @@ export default class OneDetailsList extends Component{
         };
     }
     backAction =()=>{
-        this.props.navigation.goBack()
+        this.props.navigation.goBack(null)
     }
     onclickAction =()=>{
         alert('点击了')

@@ -24,6 +24,9 @@ export default class OneDetailsFlat extends Component{
         title: 'FlatList',
         headerStyle:{backgroundColor:'yellow'},
         headerTintColor: 'black',
+        headerLeft:(
+            <Text onPress={()=>navigation.goBack("Tab")}>返回首页</Text>
+        ),
     })
     // 构造
     constructor(props) {

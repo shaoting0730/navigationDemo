@@ -20,7 +20,7 @@ export default class OneDetails extends Component {
         headerStyle:{backgroundColor:'cyan'},
         headerTintColor: 'red',
         headerLeft:(
-            <Text onPress={()=>navigation.goBack()}>回到上一页</Text>
+            <Text onPress={()=>navigation.goBack(null)}>回到上一页</Text>
         ),
         headerTitleStyle:{alignSelf:'center'} //安卓title的位置
 
