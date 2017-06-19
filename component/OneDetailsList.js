@@ -19,9 +19,15 @@ var {width,height} = Dimensions.get('window');
 var dataAry = []
 var ds = new ListView.DataSource({rowHasChanged:(r1,r2) => r1 !== r2});
 export default class OneDetailsList extends Component{
-    static navigationOptions = ({ navigation }) => ({
-         header:null  //取消导航栏
-    })
+    static navigationOptions = ({ navigation, screenProps }) => ({
+        title: 'ListView',
+        headerStyle:{backgroundColor:'red'},
+        headerRight:(
+            <Text onPress={()=>navigation.state.params.navigatePress()}>
+                返回
+            </Text>
+        )
+    });
     // 构造
     constructor(props) {
         super(props);
@@ -41,18 +47,11 @@ export default class OneDetailsList extends Component{
     }
     render() {
         return (
-            <View>
-                <View style={{height:64,backgroundColor:'red',flexDirection:'row',justifyContent:'space-around',alignItems:"center"}}>
-                    <Text onPress={()=>this.backAction()} style={{marginTop:10}}>返回上一层</Text>
-                    <Text style={{marginTop:10}}>listView</Text>
-                    <Text style={{marginTop:10}} onPress={()=>this.onclickAction()}>点击</Text>
-                </View>
                 <ListView
                     dataSource={this.state.dataSource}
                     renderRow={this.renderRow}
                     onEndReached={this.onEndReached}
                 />
-            </View>
         );
     }
 
@@ -85,6 +84,17 @@ export default class OneDetailsList extends Component{
         })
     }
 
+    componentDidMount(){
+
+        this.props.navigation.setParams({
+            title:'自定义Header',
+            navigatePress:this.navigatePress
+        })
+    }
+
+    navigatePress = () => {
+        alert('点击了')
+    }
 
 
 };

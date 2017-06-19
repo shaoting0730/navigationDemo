@@ -39,9 +39,7 @@ export default class Two extends Component {
         );
     }
 
-    componentWillMount(){
 
-    }
 
 
 
