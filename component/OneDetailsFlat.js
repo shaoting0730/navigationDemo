@@ -20,6 +20,7 @@ var dataAry = []
 var start  = 0
 
 export default class OneDetailsFlat extends Component{
+    //返回首页方法需要修改react-navigation库的源码.修改方法见:http://www.jianshu.com/p/2f575cc35780
     static navigationOptions = ({ navigation }) => ({
         title: 'FlatList',
         headerStyle:{backgroundColor:'yellow'},
@@ -28,6 +29,7 @@ export default class OneDetailsFlat extends Component{
             <Text onPress={()=>navigation.goBack("Tab")}>返回首页</Text>
         ),
     })
+
     // 构造
     constructor(props) {
         super(props);
