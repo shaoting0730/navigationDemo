@@ -18,13 +18,15 @@ import {
 var {width,height} = Dimensions.get('window');
 var dataAry = []
 var ds = new ListView.DataSource({rowHasChanged:(r1,r2) => r1 !== r2});
+//在static中使用this. 修改方法见:http://www.jianshu.com/p/2f575cc35780
+//防止点击多次,跳转界面多次,需修改react-navigation源码.详见:https://github.com/react-community/react-navigation/pull/1348/files
 export default class OneDetailsList extends Component{
     static navigationOptions = ({ navigation, screenProps }) => ({
         title: 'ListView',
         headerStyle:{backgroundColor:'red'},
         headerRight:(
             <Text onPress={()=>navigation.state.params.navigatePress()}>
-                返回
+                点击
             </Text>
         )
     });
@@ -36,14 +38,9 @@ export default class OneDetailsList extends Component{
             dataAry.push(i)
         }
         this.state = {
+            text:'XXXX',
             dataSource:ds.cloneWithRows(dataAry),
         };
-    }
-    backAction =()=>{
-        this.props.navigation.goBack(null)
-    }
-    onclickAction =()=>{
-        alert('点击了')
     }
     render() {
         return (
@@ -85,15 +82,13 @@ export default class OneDetailsList extends Component{
     }
 
     componentDidMount(){
-
         this.props.navigation.setParams({
-            title:'自定义Header',
             navigatePress:this.navigatePress
         })
     }
 
     navigatePress = () => {
-        alert('点击了')
+        alert(this.state.text)
     }
 
 
